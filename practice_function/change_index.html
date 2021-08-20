@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thay đổi vị trí</title>
+</head>
+<body style="text-align: center;">
+    <input type="number" name="1" id="1" placeholder="1️⃣">
+    <input type="number" name="2" id="2" placeholder="2️⃣"> <br> <br>
+    <button onclick="change_index(document.getElementById('1').value,
+                                  document.getElementById('2').value)">Đổi chỗ</button>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function change_index(num1, num2) {
+        let num3 = num1;
+        num1 = num2;
+        num2 = num3;
+
+        document.getElementById('result').innerHTML='<hr style="width:50%">'+'Vị trí sau khi đổi là: '+num1+' '+num2;
+    }
+</script>

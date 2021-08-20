@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đảo ngược mảng</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    let n = +prompt('Bạn muốn có bao nhiêu phần tử trong mảng ?');
+    let arr =Array();
+    for (let i=0;i < n; i++) {
+        arr[i] = prompt('Nhập phần tử thứ '+i+': ');
+    }
+
+    document.write('Mảng đã nhập vào: ');
+    for (let x = 0; x < arr.length; x++) {
+            document.write(arr[x]+', ');
+        }
+    
+
+    document.write('<br>'+'Mảng đã đảo ngược: ');
+    for (let x=arr.length-1; x >= 0; x--) {
+        document.write(arr[x]+', ');
+    }
+    
+</script>

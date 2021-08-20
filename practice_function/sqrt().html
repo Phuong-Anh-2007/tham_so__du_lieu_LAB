@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính bình phương</title>
+</head>
+<body style="text-align: center;">
+    <h1>Tính bình phương của một số</h1>
+    <input type="number" name="number" id="number" oninput="binh_phuong(this.value)" placeholder="Hãy nhập vào một số">
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function binh_phuong(x){
+        document.getElementById('result').innerHTML='<hr style="width:25%">'+x+'^2 = '+x*x;
+    }
+</script>

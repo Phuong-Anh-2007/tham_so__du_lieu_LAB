@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra ký tự số</title>
+</head>
+<body style="text-align: center;">
+    <h1>🔠 Kiểm tra ký tự số 🔢</h1>
+    <input type="text" name="number" id="number" onkeypress="key()">
+    <button onclick="check(document.getElementById('number').value)">✔</button>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function check(number) {
+        if (isNaN(number) == false) {
+            document.getElementById('result').innerHTML='Đây là một số 🔢'
+        } else {
+            document.getElementById('result').innerHTML='Đây không phải là một số 🔠';
+        }
+    }
+
+    function key() {
+        if (window.event.keyCode == '13') {
+            check(document.getElementById('number').value)
+        }
+    }
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm số nhỏ nhất trong ba số</title>
+</head>
+<body style="text-align: center;">
+    <h1>Tìm số nhỏ nhất trong ba số</h1>
+    <input type="number" name="1" id="1" placeholder="Nhập vào số thứ nhất">
+    <input type="number" name="2" id="2" placeholder="Nhập vào số thứ hai">
+    <input type="number" name="3" id="3" placeholder="Nhập vào số thứ ba"> <br> <br>
+    <button onclick="find_min(+document.getElementById('1').value,
+                              +document.getElementById('2').value,
+                              +document.getElementById('3').value)">✔</button>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function find_min(a,b,c){
+        let i=0;
+        let arr=[a,b,c];
+        let count = 0;
+        let min = arr[0];
+
+        debugger;
+        for (let x=0; x < arr.length; x++) {
+            if (arr[x] < min) {
+                min = arr[x];
+            }
+
+            if (arr[x] === min) {
+                count++;
+            }
+        }
+
+
+        if (count == 3) {
+            document.getElementById('result').innerHTML='<hr style="width:50%">'+'Cả ba số này đều bằng nhau';
+        } else {
+            document.getElementById('result').innerHTML='<hr style="width:50%">'+'Số nhỏ nhất trong ba số này là:' +min;
+        }
+        
+    }
+</script>

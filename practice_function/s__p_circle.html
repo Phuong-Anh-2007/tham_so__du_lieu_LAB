@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính chu vi và diện tích hình tròn</title>
+</head>
+<body style="text-align: center;">
+    <h1>Tính chu vi và diện tích hình tròn ⭕</h1>
+    <input type="number" name="number" id="number" placeholder="Bán kính hình tròn" onkeypress="key(this.value)">
+    <button onclick="s_p(document.getElementById('number').value)">✔</button>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function s_p(r) {
+        document.getElementById('result').innerHTML='<hr width:25%> Chu vi hình tròn là: '+r*2*3.14+'<br>'
+                                                                +  'Diện tích hình tròn là: '+r*r*3.14;
+    }
+
+    function key(e) {
+        if (window.event) {
+            e=window.event;
+        }
+        if (e.keyCode='13') {
+            s_p(document.getElementById('number').value)
+        }
+
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính giai thừa</title>
+</head>
+<body style="text-align: center;">
+    <h1>Tính giai thừa của một số</h1>
+    <input type="number" name="number" id="number" onkeypress="key()" placeholder="Nhập vào một số">
+    <button onclick="show()">✔ </button>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function tinh_giai_thua(number) {
+        if (number == 0) {
+            return 1;
+        } else {
+            return number*tinh_giai_thua(number-1);
+        }
+    }
+
+    function key() {
+        if (window.event.keyCode='13') {
+            tinh_giai_thua(document.getElementById('number').value);
+        }
+    }
+
+    function show() {
+        document.getElementById('result').innerHTML='<hr style="width:25%">'+document.getElementById('number').value+'! = '+tinh_giai_thua(document.getElementById('number').value);
+    }
+    
+</script>

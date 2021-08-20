@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm ký tự trong chuỗi</title>
+</head>
+<body style="text-align: center;">
+    <h1>Tìm một loài hoa trong mảng</h1>
+    <input type="text" name="flower" id="flower" placeholder="Nhập vào một loài hoa">
+    <button onclick="find_flower(document.getElementById('flower').value)">🌷</button>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    let arr = ['Hoa phù dung','Hoa hải đường','Hoa mẫu đơn','Hoa cát tường','Hoa tulip','Mạn châu sa Hoa','Hoa anh đào'];
+    function find_flower(flower) {
+        let count =0;
+        for (let i=0; i < arr.length; i++) {
+            console.log(arr[i]);
+            if (arr[i] == flower) {
+                count++;
+                document.getElementById('result').innerHTML='<hr style="width:50%"> Loài hoa này xuất hiện '+count+' lần trong mảng';
+            }
+        }
+        if (count == 0) {
+            document.getElementById('result').innerHTML='<hr style="width:50%"> Không tìm thấy loài hoa này trong mảng'
+                                                                                +'<br>Các loài hoa trong mảng là: '+arr;
+        }
+
+    }
+</script>

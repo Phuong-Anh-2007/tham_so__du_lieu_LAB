@@ -7,28 +7,58 @@
     <title>Tìm vị trí</title>
 </head>
 <body>
-    <h1>Tìm vị trí của ký tự</h1>
-    <input type="text" name="text" id="text" placeholder="Nhập vào 1 ký tự">
-    <button onclick="find(document.getElementById('text').value)" >🔎</button>
-    <p id="result"></p>
+    <button onclick="button()" id="button" onmouseout="out()" onmouseover="inp()" style="border: 0px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Click nè 😉</button>
 </body>
 </html>
 <script>
-    let arr = [18,22,08,55,71];
-    let count =0;
-    function find(text) {
+
+    function button() {
+        let arr = Array();
+        let n = +prompt('Nhập lượng phần tử trong mảng:');
+        let count =0;
+
+        //Thêm phần tử vào mảng:
+        for (let i =0; i<n ;i++) {
+            arr[i] = prompt('Nhập phần tử thứ '+i+': ');
+        }
+
+        //Nhập phần tử cần tìm:
+        let text = prompt('Nhập phần tử cần tìm:');
+
+        //Dò phần tử cần tìm trong mảng:
         for (let i =0; i<arr.length; i++) {
             if (arr[i] == text) {
                 count++;
             }
         }
-
-        // <=
-        if (count > 0) {
-            document.getElementById('result').innerHTML='<hr style="width:50%">Ký tự này xuất hiện '+count+' lần trong mảng';
-        } else {
-            document.getElementById('result').innerHTML='<hr style="width:50%">Không tìm thấy ký tự trong mảng'
-        }
         
+        //In ra mảng: 
+        document.write('Mảng đã nhập vào: ')
+        for (let i = 0; i<arr.length;i++) {
+            document.write(arr[i],', ');
+        }
+        document.write('<br>');
+
+        //In ra kết quả
+        document.write('Phần tử cần tìm: '+text+'<br>');
+        if (count > 0) {
+            document.write('Phần tử này xuất hiện '+count+' lần trong mảng');
+            count = 0;
+        } else {
+            document.write('<b>Kết quả: '+'Không tìm thấy ký tự trong mảng</b>');
+        }
     }
+    
+    function inp() {
+        document.getElementById('button').style.backgroundColor='green';
+        document.getElementById('button').style.color='white';
+    }
+    
+    function out() {
+        document.getElementById('button').style.color='black';
+        document.getElementById('button').style.backgroundColor='lightgrey';
+    }
+        
+
+
 </script>

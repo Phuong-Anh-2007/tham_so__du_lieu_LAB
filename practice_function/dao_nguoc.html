@@ -7,24 +7,35 @@
     <title>Đảo ngược mảng</title>
 </head>
 <body>
+    <button onclick="button()" id="button" onmouseout="out()" onmouseover="inp()" style="border: 0px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Click nè 😉</button>
 </body>
 </html>
 <script>
-    let n = +prompt('Bạn muốn có bao nhiêu phần tử trong mảng ?');
-    let arr =Array();
-    for (let i=0;i < n; i++) {
-        arr[i] = prompt('Nhập phần tử thứ '+i+': ');
-    }
+    function button() {
+        let n = +prompt('Bạn muốn có bao nhiêu phần tử trong mảng ?');
+        let arr =Array();
+        for (let i=0;i < n; i++) {
+            arr[i] = prompt('Nhập phần tử thứ '+i+': ');
+        }
 
-    document.write('Mảng đã nhập vào: ');
-    for (let x = 0; x < arr.length; x++) {
+        document.write('Mảng đã nhập vào: ');
+        for (let x = 0; x < arr.length; x++) {
+                document.write(arr[x]+', ');
+            }
+    
+        document.write('<br>'+'Mảng đã đảo ngược: ');
+        for (let x=arr.length-1; x >= 0; x--) {
             document.write(arr[x]+', ');
         }
-    
+    }
 
-    document.write('<br>'+'Mảng đã đảo ngược: ');
-    for (let x=arr.length-1; x >= 0; x--) {
-        document.write(arr[x]+', ');
+    function inp() {
+        document.getElementById('button').style.backgroundColor='purple';
+        document.getElementById('button').style.color='white';
     }
     
+    function out() {
+        document.getElementById('button').style.color='black';
+        document.getElementById('button').style.backgroundColor='lightgrey';
+    }
 </script>
